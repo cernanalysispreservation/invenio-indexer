@@ -64,10 +64,10 @@ setup_requires = [
 ]
 
 install_requires = [
-    'Flask>=0.11.1',
-    'Flask-CeleryExt>=0.3.0',
-    'invenio-pidstore>=1.0.0',
-    'invenio-records>=1.0.0',
+    'Flask==1.1',
+    'Flask-CeleryExt>=0.3.1',
+    'invenio-pidstore==1.1.0',
+    'invenio-records>=1.3.0',
     'pytz>=2016.4',
 ]
 

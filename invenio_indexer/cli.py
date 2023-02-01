@@ -47,7 +47,7 @@ def run(delayed, concurrency, version_type=None, queue=None,
         celery_kwargs = {
             'kwargs': {
                 'version_type': version_type,
-                'es_bulk_kwargs': {'raise_on_error': raise_on_error},
+                'search_bulk_kwargs': {'raise_on_error': raise_on_error},
             }
         }
         click.secho(
@@ -60,7 +60,7 @@ def run(delayed, concurrency, version_type=None, queue=None,
     else:
         click.secho('Indexing records...', fg='green')
         RecordIndexer(version_type=version_type).process_bulk_queue(
-            es_bulk_kwargs={'raise_on_error': raise_on_error})
+            search_bulk_kwargs={'raise_on_error': raise_on_error})
 
 
 @index.command()

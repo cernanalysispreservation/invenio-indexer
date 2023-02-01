@@ -16,17 +16,17 @@ from .api import RecordIndexer
 
 
 @shared_task(ignore_result=True)
-def process_bulk_queue(version_type=None, es_bulk_kwargs=None):
+def process_bulk_queue(version_type=None, search_bulk_kwargs=None):
     """Process bulk indexing queue.
 
     :param str version_type: Elasticsearch version type.
-    :param dict es_bulk_kwargs: Passed to
+    :param dict search_bulk_kwargs: Passed to
         :func:`elasticsearch:elasticsearch.helpers.bulk`.
 
     Note: You can start multiple versions of this task.
     """
     RecordIndexer(version_type=version_type).process_bulk_queue(
-        es_bulk_kwargs=es_bulk_kwargs)
+        search_bulk_kwargs=search_bulk_kwargs)
 
 
 @shared_task(ignore_result=True)
