@@ -146,7 +146,7 @@ class RecordIndexer(object):
             :meth:`Search:Search.Search.delete`.
         """
         index = self.record_to_index(record)
-        index = self._prepare_index(index)
+        # index = self._prepare_index(index)
 
         return self.client.delete(
             id=str(record.id),
