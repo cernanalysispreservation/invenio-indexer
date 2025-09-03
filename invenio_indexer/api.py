@@ -298,7 +298,11 @@ class RecordIndexer(object):
 
     def _prepare_index(self, index):
         """Prepare the index/doc_type before an operation."""
-        return build_alias_name(index)
+        if (current_app.config.get('SEARCH_INDEX_PREFIX') and
+            not index.startswith(current_app.config.get('SEARCH_INDEX_PREFIX'))):
+            return build_alias_name(index)
+
+        return index
 
     @staticmethod
     def _prepare_record(record, index, arguments=None, **kwargs):
