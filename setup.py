@@ -29,7 +29,7 @@ tests_require = [
     'redis>=2.10.0',
 ]
 
-invenio_search_version = '1.2.0'
+invenio_search_version = '1.2.3'
 
 extras_require = {
     'docs:python_version=="2.7"': [
@@ -49,6 +49,9 @@ extras_require = {
     ],
     'elasticsearch7': [
         'invenio-search[elasticsearch7]>={}'.format(invenio_search_version),
+    ],
+    'opensearch3': [
+        'invenio-search[opensearch3]>={}'.format(invenio_search_version),
     ],
     'tests': tests_require,
 }
